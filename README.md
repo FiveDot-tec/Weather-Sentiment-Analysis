@@ -32,8 +32,11 @@ Annika_Abschlussprojekt/
 │   ├── app.py                          # FastAPI Service (Port 8000)
 │   ├── app.log                         # Centralized backend logging file
 │   ├── cloud_db.py                     # Supabase Database Handler class
+│   ├── config.py                       # Configuration file
 │   ├── sentiment_analysis.py           # Sentiment Analysis Class
 │   └── sqlitedb.py                     # SQLite Database Engine Handler
+├── config/
+│   └── config.json                     # Configuration file
 ├── data/
 │   └── output_data/    
 │        └── weather_sentiment_data.db  # SQLite Database
