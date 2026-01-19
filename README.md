@@ -34,7 +34,8 @@ Annika_Abschlussprojekt/
 │   ├── cloud_db.py                     # Supabase Database Handler class
 │   ├── config.py                       # Configuration file
 │   ├── sentiment_analysis.py           # Sentiment Analysis Class
-│   └── sqlitedb.py                     # SQLite Database Engine Handler
+│   ├── sqlitedb.py                     # SQLite Database Engine Handler
+│   └── weather_fetchers.py             # Weather Fetcher Classes
 ├── config/
 │   └── config.json                     # Configuration file
 ├── data/
