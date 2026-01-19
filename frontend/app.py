@@ -165,9 +165,21 @@ def main():
         # Column 1 — Weather icon
         with c1:
             icon_code = res.get("icon")
-            logger.info(f"DEBUG icon code: {icon_code}")
             if icon_code:
-                st.image(f"http://{backend_url}:{backend_port}/icon/{icon_code}", width=90)
+                # 1. Construct the internal URL (Backend-to-Backend)
+                icon_url = f"http://{backend_url}:{backend_port}/icon/{icon_code}"
+
+                try:
+                    # 2. Fetch the actual image data from your FastAPI backend
+                    response = requests.get(icon_url, timeout=5)
+                    if response.status_code == 200:
+                        # 3. Pass the raw bytes (response.content) to st.image
+                        st.image(response.content, width=90)
+                    else:
+                        st.markdown("<h1>clear sky</h1>", unsafe_allow_html=True)
+                except Exception as e:
+                    logger.error(f"Frontend failed to fetch icon from backend: {e}")
+                    st.markdown("<h1>🌦️</h1>", unsafe_allow_html=True)
             else:
                 st.markdown("<h1>🌦️</h1>", unsafe_allow_html=True)
 
