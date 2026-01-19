@@ -1,22 +1,28 @@
 """
-This Streamlit application provides a web interface for performing weather data requests and conducting sentiment
-analysis based on user feedback. It interacts with a FastAPI backend and optionally sends notifications to a Discord
-webhook. The interface enables users to request weather information for a specific city, view the results, provide
-feedback on the weather, and analyze the sentiment of the feedback.
+Streamlit-based weather and sentiment analysis application.
+
+This application allows users to query weather data by providing the name of a city, view
+the results, and submit feedback regarding the weather conditions. Additionally, user-provided
+feedback is analyzed for sentiment (polarity). The application leverages a FastAPI backend to
+perform weather data retrieval and sentiment analysis. The results are then displayed in the
+user interface using Streamlit.
+
+Imports:
+    os: Provides a portable way of using operating system-dependent functionality.
+    pathlib.Path: Offers classes representing filesystem paths with semantics appropriate for
+                  different operating systems.
+    requests: Simplifies making HTTP requests to send data or fetch responses from APIs.
+    dotenv.load_dotenv: Loads environment variables from a .env file.
+    streamlit as st: Streamlit library used to build user interfaces for data applications.
+    logging.config: Implements configuration-based logging setup.
+    datetime.datetime: Supplies classes for manipulating dates and times.
 
 Attributes:
-    BASE_DIR (Path): The base directory of the project, used to resolve file paths.
-    URL (str): The Discord webhook URL loaded from the environment variables.
-    HEADERS (dict): HTTP headers used for API requests, including User-Agent and Content-Type.
-
-Supported functionalities:
-    - Request the current weather based on user-provided city name.
-    - Display the city weather data, including temperature and descriptions in English and German.
-    - Gather user feedback regarding the weather and process its sentiment through FastAPI.
-    - Log events and optionally send logs/notifications to a Discord channel.
-    - Persist session state, enabling continuous data and UI availability during interactions.
-
-Logging is configured via a centralized logging configuration file for consistent and detailed logging behavior.
+    BASE_DIR (Path): Path object representing the root directory of the project.
+    log_config_path (Path): Absolute path to the logging configuration file.
+    logger (Logger): Logger instance for application logging.
+    URL (Optional[str]): Base URL for the Discord webhook retrieved from environment variables.
+    HEADERS (Dict[str, str]): Default HTTP headers to use with API requests.
 """
 
 # streamlit run frontend/app.py --server.port 8501
@@ -27,9 +33,6 @@ from dotenv import load_dotenv
 import streamlit as st
 import logging.config
 from datetime import datetime
-from io import BytesIO
-
-
 
 # Calculate the project root 
 BASE_DIR = Path(__file__).resolve().parent.parent

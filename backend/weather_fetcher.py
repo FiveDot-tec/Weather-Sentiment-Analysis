@@ -1,4 +1,15 @@
-from pydantic import BaseModel 
+"""
+This module contains data models for processing requests related to weather
+information and sentiment analysis. It utilizes Pydantic's BaseModel to
+facilitate data validation and serialization.
+
+The module defines:
+- WeatherRequest: A model for weather-related requests, requiring the name of
+  the city in the payload.
+- SentimentRequest: A model for text-based sentiment analysis requests,
+  including the text content and an associated city name.
+"""
+from pydantic import BaseModel
 # structure of json payload
 class WeatherRequest(BaseModel):
     """

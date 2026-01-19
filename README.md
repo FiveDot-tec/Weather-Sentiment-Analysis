@@ -97,3 +97,18 @@ Make sure to include the `--server.port` flag to avoid port conflicts.
 Run the command in the project root directory.
 Access the GUI at http://127.0.0.1:8501
 
+
+## Web UI
+Start Page:
+
+## Web UI
+Start Page:
+![img.png](img.png)
+
+1. Type in a city name and press the Request Button.
+2. The weather data for the selected city will be displayed.
+3. Enter your sentiment and press the Submit Feedback Button.
+4. The sentiment analysis result will be displayed.
+
+Result Page:
+![img_1.png](img_1.png)

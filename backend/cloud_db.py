@@ -1,3 +1,12 @@
+"""
+This module establishes a connection to a Supabase database, initializes a logging
+configuration, and provides a class to interact with the database via API calls.
+
+The module calculates the project's base directory and sets up consistent logging
+using a defined configuration file. It also provides functionality for securely
+loading environment variables to establish a connection to a Supabase instance
+for database operations.
+"""
 import os
 from pathlib import Path
 from dotenv import load_dotenv

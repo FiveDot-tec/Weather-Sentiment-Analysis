@@ -29,10 +29,7 @@ import sqlite_db as sqldb
 import pandas as pd # type: ignore
 from datetime import datetime
 from weather_fetcher import WeatherRequest, SentimentRequest
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(BASE_DIR))
-import config.config as cfg
+import config as cfg
 
 # Calculate the project root 
 BASE_DIR = Path(__file__).resolve().parent.parent

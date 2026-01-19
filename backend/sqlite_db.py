@@ -1,4 +1,31 @@
+"""
+This module  configures a SQLite database, and initializes the
+necessary directory structure for the weather sentiment data storage.
 
+The logging configuration is loaded from a centralized configuration file to
+ensure consistent log management. The SQLite database is created if it does
+not exist, with the necessary table schema for storing weather and sentiment
+data.
+
+Attributes
+----------
+BASE_DIR : Path
+    The root directory of the project.
+log_config_path : Path
+    The absolute path to the logging configuration file.
+logger : logging.Logger
+    Configured logger for the application.
+db_path : Path
+    The absolute path to the SQLite database file.
+engine : Path
+    Reference path for the SQLite database file.
+
+Raises
+------
+OperationalError
+    Raised if there is a failure in establishing a connection to the SQLite database
+    or executing SQL commands during the initialization process.
+"""
 import logging.config
 import os
 from pathlib import Path
