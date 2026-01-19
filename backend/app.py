@@ -137,7 +137,6 @@ async def get_weather(request: WeatherRequest):
         "temp": temp,
         "description_en": description_en,
         "description_de": description_de,
-        "icon": icon,
     }
     logger.info(f"DEBUG icon code returned: {icon}")
 

@@ -241,16 +241,28 @@ def main():
                 logger.info(f"Discord: {response_discord.status_code}")
 
     if st.session_state.sentiment_result is not None:
-        st.info(f"Sentiment Analysis Result: {st.session_state.sentiment_result}")
         score = st.session_state.sentiment_result
 
-        # simple interpretation “pill”
-        if score > 0.2:
-            st.success(f"😊 Positive sentiment (polarity: {score:.3f})")
-        elif score < -0.2:
-            st.error(f"☹️ Negative sentiment (polarity: {score:.3f})")
-        else:
-            st.info(f"😐 Neutral sentiment (polarity: {score:.3f})")
+        # 2 Column layout
+        c1, c2 = st.columns([1, 2], vertical_alignment="center")
+
+        #c1: Sentiment Analysis Result: Polarity
+        with c1:
+            st.metric(
+                label="Sentiment Analysis Result:",
+                value=score
+            )
+
+        #c2: Sentiment Analysis Icon scale
+
+        with c2:
+             # simple interpretation “pill”
+            if score > 0.2:
+                st.success(f"😊 Positive sentiment (polarity: {score:.1f})")
+            elif score < -0.2:
+                st.error(f"☹️ Negative sentiment (polarity: {score:.1f})")
+            else:
+                st.info(f"😐 Neutral sentiment (polarity: {score:.1f})")
 
 
 
