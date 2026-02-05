@@ -57,7 +57,7 @@ Annika_Weather-Sentiment-Analysis/
 ---
 1. **Clone Repo**
 ~~~
-git clone https://github.com/FiveDot-tec/Annika_Abschlussprojekt
+git clone https://github.com/FiveDot-tec/Weather-Sentiment-Analysis
 ~~~
 2. **Environment Configuration**
 Create a .env file in the root directory. It should contain the following:
