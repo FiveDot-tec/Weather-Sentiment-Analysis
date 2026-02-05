@@ -44,14 +44,14 @@ logging.config.fileConfig(log_config_path, disable_existing_loggers=False)
 logger = logging.getLogger()
 
 
-#tests of Iris Prediction Model are going to be sent to discord
+# Load environment variables
 load_dotenv()
 URL = os.getenv("WEB_HOOK")
 HEADERS = {
     "User-Agent": "Mozilla/5.0",
     "Content-Type": "application/json"
 }
-
+# CSS Injection
 def inject_css():
     st.markdown(
         """
