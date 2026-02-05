@@ -46,7 +46,7 @@ Weather-Sentiment-Analysis/
 │   └── app.py                          # Streamlit UI (Port 8501)
 ├── logging/
 │   └── logging.ini                     # Centralized logging configuration
-├── .env                                # Environment variables (Discord Webhook)
+├── .env                                # Environment variables (Discord Webhook, API key etc.)
 ├── .gitignore                          # Files excluded from Version Control
 ├── requirements.txt                    # Project dependencies
 └── README.md                           # Project documentation
