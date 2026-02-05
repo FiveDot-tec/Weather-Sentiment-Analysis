@@ -27,7 +27,7 @@ An end-to-end weather + sentiment tracking app with a Streamlit UI and FastAPI b
 
 ---
 ```text
-Annika_Weather-Sentiment-Analysis/
+Weather-Sentiment-Analysis/
 ├── backend/
 │   ├── app.py                          # FastAPI Service (Port 8000)
 │   ├── app.log                         # Centralized backend logging file
